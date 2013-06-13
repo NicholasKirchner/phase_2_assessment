@@ -1,0 +1,5 @@
+<ul>
+  <% @event.errors.each do |field, problem| %>
+    <li class="error"><%= field.to_s + " " + problem %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,81 @@
+html {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 10px;
+  background-color: #333;
+}
+
+.brand {
+  font-family: "Lato", Verdana, sans-serif;
+  font-size: 3em;
+
+}
+
+.brand a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.marketing {
+  padding: 10px;
+  margin: 1em 0;
+    width: 100%;
+    color: #fff;
+    background-color: #555;
+
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav {
+    float: right;
+}
+
+header li {
+    display: inline;
+    padding: 20px;
+}
+
+header li a:hover {
+    color: #ff0;
+}
+
+.features {
+    width: 100%;
+    display: table;
+    border-style: hidden;
+    border-color: #fff;
+    border-collapse: collapse;
+}
+
+.features div {
+    display: table-cell;
+    border-style: solid;
+    border-color: grey;
+    border-width: 3px;
+    padding: 10px;
+}
+
+.features div h3 {
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}

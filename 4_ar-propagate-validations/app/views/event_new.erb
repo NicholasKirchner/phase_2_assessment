@@ -1,0 +1,13 @@
+<%= erb print_errors %>
+
+<ul>
+  <form action="/events/create" method="post">
+    <li> Name: <input type="text" name="organizer_name" value="<%= fill_value("organizer_name") %>"> </li>
+    <li> Email: <input type="text" name="organizer_email" value="<%= fill_value("organizer_email") %>"> </li>
+    <li> Event title: <input type="text" name="title" value="<%= fill_value("title") %>"> </li>
+    <li> Month: <input type="text" name="month" maxlength="2" size="2" value="<%= fill_value("month") %>">
+         Day: <input type="text" name="day" maxlength="2" size="2" value="<%= fill_value("day") %>">
+         Year: <input type="text" name="year" maxlength="4" size="4" value="<%= fill_value("year") %>"> </li>
+    <li> <input type="submit" value="Create!"> </li>
+  </form>
+</ul>

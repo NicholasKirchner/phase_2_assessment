@@ -1,0 +1,20 @@
+<div class="container">
+  <h3> Edit the note </h3>
+  <form action="/note/<%= @note.id %>" method="post">
+    <ul>
+      <li> Title: <input type="text" name="title" value="<%= @note.title %>"> </li>
+      <li> Content: <textarea rows="5" cols="40" name="content"><%= @note.content %></textarea></li>
+      <li> <input type="submit" value="Edit this note!"> </li>
+      <input type="hidden" name="_method" value="put">
+    </ul>
+  </form>
+
+  <h3> Delete the note </h3>
+  <form action="/delete/<%= @note.id %>" method="post">
+    <ul>
+      <li> <input type="submit" value="Delete this note!"> </li>
+      <input type="hidden" name="confirm" value="maybe">
+      <input type="hidden" name="_method" value="delete">
+    </ul>
+  </form>
+</div>

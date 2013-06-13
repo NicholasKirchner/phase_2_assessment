@@ -1,0 +1,12 @@
+<div class="container">
+  <form action="/delete/<%= @note.id %>" method="post">
+    <input type="hidden" name="confirm" value="yes">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Really delete">
+  </form>
+  <form action="/delete/<%= @note.id %>" method="post">
+    <input type="hidden" name="confirm" value="no">
+    <input type="submit" value="Please don't! I didn't mean it!">
+    <input type="hidden" name="_method" value="delete">
+  </form>
+</div>

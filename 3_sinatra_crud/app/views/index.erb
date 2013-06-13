@@ -1,0 +1,19 @@
+<div class="container">
+  <h3> View existing notes </h3>
+  <form action="/notes" method="get">
+    <ul>
+      <li><input type="submit" value="List all notes"></li>
+    </ul>
+  </form>
+
+  <h3> Create a new note </h3>
+
+  <form action="/notes" method="post">
+    <ul>
+      <li> Title: <input type="text" name="title"> </li>
+      <li> Content: <textarea rows="5" cols="40" name="content"></textarea></li>
+      <li> <input type="submit" value="Create!">
+    </ul>
+  </form>
+
+</div>
