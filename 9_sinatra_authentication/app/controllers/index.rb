@@ -12,10 +12,20 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  # sign-in
+  user = User.authenticate(params[:email], params[:password])
+  if user
+    session[:user_id] = user.id
+    redirect "/"
+  else
+    @error = "Sign-in failed!"
+    @email = params[:email]
+    erb :sign_in
+  end
 end
 
 delete '/sessions/:id' do
+  session.clear
+  redirect "/"
   # sign-out -- invoked via AJAX
 end
 
@@ -27,5 +37,7 @@ get '/users/new' do
 end
 
 post '/users' do
-  # sign-up a new user
+  user = User.create(params[:user])
+  session[:user_id] = user.id
+  redirect "/"
 end

@@ -1,13 +1,12 @@
 class User < ActiveRecord::Base
-  #TODO : Use bcrypt to store hashed passwords and authenticate users
-  #I say "Fuck you, bcrypt.  I do it myself"
+
   before_save :encrypt_password
 
   attr_accessor :password
 
   validates :email, presence: true
   validates_uniqueness_of :email
-  validates :password, confirmation: true
+  validates :password, confirmation: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
   def self.authenticate(email, password)
