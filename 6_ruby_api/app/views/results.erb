@@ -1,0 +1,31 @@
+<div class="container">
+
+  <h2> Showing quote for <%= @ticker %> </h2>
+
+  <h3> Historical (30 days), closing prices </h3>
+  <% YahooFinance::get_HistoricalQuotes_days(@ticker, 30) do |quote| %>
+    <%= "#{quote.date}, #{quote.close}" %><br>
+  <% end %>
+
+  <h3> Historical (30 days), adjusted closing prices </h3>
+  <% YahooFinance::get_HistoricalQuotes_days(@ticker, 30) do |quote| %>
+    <%= "#{quote.date}, #{quote.adjClose}" %><br>
+  <% end %>
+
+  <h3> Standard Quote </h3>
+  <% YahooFinance::get_standard_quotes(@ticker).each do |ticker, quote| %>
+    <%= quote %><br>
+  <% end %>
+
+  <h3> Extented Quote </h3>
+  <% YahooFinance::get_extended_quotes(@ticker).each do |ticker, quote| %>
+    <%= quote %><br>
+  <% end %>
+
+  <h3> Real time Quote </h3>
+  <% YahooFinance::get_realtime_quotes(@ticker).each do |ticker, quote| %>
+    <%= quote %><br>
+  <% end %>
+
+
+</div>
